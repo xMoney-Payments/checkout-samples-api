@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CheckoutInitializationBodyDto {
   @IsString()
@@ -21,4 +21,12 @@ export class CheckoutInitializationBodyDto {
 
   @IsString()
   publicKey: string;
+
+  @IsOptional()
+  @IsString()
+  customData?: string;
+
+  @IsOptional()
+  @IsNumber()
+  cardId?: number;
 }

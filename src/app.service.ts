@@ -73,7 +73,7 @@ export class AppService {
     // Fetch order details from your database
     const order = await this.getOrderData(`orderId1-${Date.now()}`);
 
-    const payload = this.xMoneyApiClient.initializeStandaloneCheckoutPage(
+    const payload = this.xMoneyApiClient.getWebviewCheckoutHtml(
       {
         publicKey: checkoutBody.publicKey,
         cardId: checkoutBody.cardId,

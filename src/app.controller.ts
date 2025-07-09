@@ -8,7 +8,7 @@ import {
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Post('checkout-initialization')
   checkoutInitialization(
@@ -17,12 +17,12 @@ export class AppController {
     return this.appService.checkoutInitialization(checkoutBody);
   }
 
-  @Post('checkout-initialization-standalone')
-  checkoutInitializationStandalone(
+  @Post('init-webview-checkout')
+  initWebviewCheckout(
     @Body() checkoutBody: CheckoutInitializationBodyDto,
   ): Promise<OrderOutputDto> {
     // provide xmoneycustomerid as a second argument if you want cards to be shown
-    return this.appService.checkoutInitializationStandalonePage(checkoutBody);
+    return this.appService.getWebviewCheckoutHtml(checkoutBody);
   }
 
   @Post('save-card-initialization')

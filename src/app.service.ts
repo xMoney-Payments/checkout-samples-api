@@ -62,7 +62,7 @@ export class AppService {
     return payload;
   }
 
-  async checkoutInitializationStandalonePage(
+  async getWebviewCheckoutHtml(
     checkoutBody: CheckoutInitializationBodyDto,
     xMoneyCustomerId?: number,
   ): Promise<any> {
